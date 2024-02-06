@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const SearchCase = () => {
+const SearchDocument = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const handleSearch = () => {
     // Implement search functionality based on searchQuery
@@ -16,21 +16,21 @@ const SearchCase = () => {
         exit={{ opacity: 0 }}
       >
         <div className="max-w-[600px] mx-auto">
-          <label className="block text-sm md:text-lg font-[500] mb-2 text-center text-[#444]">
-            Search for existing case documents for your court reading
+          <label className="block text-lg font-[500] mb-2 text-center text-[#444]">
+            Search for documents
           </label>
           <div className="flex flex-col md:flex-row items-center">
             <input
               type="text"
-              className="w-full border-2 py-3.5 px-4 mt-2 rounded-md md:mr-4 outline-none 
+              className="w-full border-2 py-3.5 px-4 mt-2 rounded-md mr-4 outline-none 
               focus:border-[#222]/50 focus:border-2 transition-all duration-200"
-              placeholder="Enter case name or title"
+              placeholder="Enter document name or title"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button
               className="bg-[#111] bg-opacity-85 text-white px-10 py-2.5 md:py-3.5 
-              rounded-lg mt-4 md:mt-2 mx-auto flex hover:opacity-70 transition-all duration-200"
+              rounded-lg mt-2 mx-auto flex hover:opacity-70 transition-all duration-200"
               onClick={handleSearch}
             >
               Search
@@ -40,13 +40,13 @@ const SearchCase = () => {
 
         <div className="max-w-[800px] mx-auto">
           <p className="text-center tb:text-left text-lg md:text-xl mt-10 font-[600] text-[#333]">
-            Available Cases for Court Reading
+            Available Documents
           </p>
 
           <div className="flex items-center tb:items-start flex-col tb:flex-row gap-5 mt-6">
-            <Cases />
-            <Cases />
-            <Cases />
+            <Documents />
+            <Documents />
+            <Documents />
           </div>
         </div>
       </motion.div>
@@ -54,12 +54,12 @@ const SearchCase = () => {
   );
 };
 
-export default SearchCase;
+export default SearchDocument;
 
-const Cases = () => {
+const Documents = () => {
   return (
-    <div className="flex bg-white shadow-xl w-full max-w-[380px] p-2  md:p-3 rounded-lg justify-between items-center">
-      <div className="border border-[#333]/20 p-2.5 md:p-3.5 rounded-md">
+    <div className="flex bg-white shadow-xl w-full max-w-[380px] p-3 rounded-lg justify-between items-center">
+      <div className="border border-[#333]/20 p-3.5 rounded-md">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 640 512"
@@ -70,7 +70,7 @@ const Cases = () => {
         </svg>
       </div>
 
-      <p className="text-lg font-[500]">Law suit</p>
+      <p className="text-lg font-[500]">Document</p>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"

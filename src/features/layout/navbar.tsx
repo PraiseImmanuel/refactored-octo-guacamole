@@ -3,6 +3,7 @@ import Wrapper from "@/features/shared/wrapper";
 import { AnimatePresence, motion } from "framer-motion";
 import { Sling as Hamburger } from "hamburger-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 const links = [
@@ -16,7 +17,7 @@ const linksRoute = [
   "court-reading",
   "documentation",
   "legal-research",
-  "recommend judgments",
+  "recommend-judgments",
 ];
 
 interface IProps {
@@ -25,9 +26,10 @@ interface IProps {
 
 const Navbar: React.FC<IProps> = ({ setModalOpen }) => {
   const [isOpen, setOpen] = useState(false);
+  const pathname = usePathname();
   return (
     <nav
-      className={`py-2 md:py-5 shadow-sm  fixed w-full transition-all duration-300 ${
+      className={`py-2 md:py-5 shadow-sm z-40 fixed w-full transition-all duration-300 ${
         !isOpen
           ? "backdrop-blur-[2px] bg-white/60"
           : "backdrop-blur-[8px] bg-white bg-opacity-95"
@@ -47,8 +49,12 @@ const Navbar: React.FC<IProps> = ({ setModalOpen }) => {
               <Link
                 key={index}
                 href={linksRoute[index]}
-                className="transition-all duration-300 text-sm font-[500] border-b border-transparent
-                hover:border-b-[#555] pb-1"
+                className={`transition-all duration-300 text-sm font-[500] border-b 
+                hover:border-b-[#555] pb-1 ${
+                  pathname === "/" + linksRoute[index]
+                    ? "border-b-[#222]"
+                    : "border-transparent"
+                }`}
               >
                 {item}
               </Link>
