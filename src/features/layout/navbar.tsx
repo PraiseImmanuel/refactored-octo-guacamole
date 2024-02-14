@@ -28,13 +28,7 @@ const Navbar: React.FC<IProps> = ({ setModalOpen }) => {
   const [isOpen, setOpen] = useState(false);
   const pathname = usePathname();
   return (
-    <nav
-      className={`py-2 md:py-5 shadow-sm z-40 fixed w-full transition-all duration-300 ${
-        !isOpen
-          ? "backdrop-blur-[2px] bg-white/60"
-          : "backdrop-blur-[8px] bg-white bg-opacity-95"
-      }`}
-    >
+    <nav>
       <Wrapper>
         <div className="flex justify-between items-center">
           <Link
@@ -69,10 +63,6 @@ const Navbar: React.FC<IProps> = ({ setModalOpen }) => {
           >
             Register
           </button>
-
-          <div className=" md:hidden">
-            <Hamburger size={24} toggled={isOpen} toggle={setOpen} />
-          </div>
         </div>
 
         {/* Mobile Links */}

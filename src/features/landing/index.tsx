@@ -1,24 +1,20 @@
 "use client";
 import React, { useState } from "react";
-import Navbar from "../layout/navbar";
-import Hero from "./component/hero";
-import CardsHolder from "./component/card/cards-holder";
-import Footer from "../layout/components/footer";
-import Modal from "../layout/components/modal";
+import Navbar from "../layout/nav";
 import { AnimatePresence } from "framer-motion";
+import MobileSidebar from "../layout/mobile-sidebar";
+import Sidebar from "../layout/sidebar";
 
 const LandingPage = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
   return (
     <div className="font-poppins">
-      <Navbar setModalOpen={setModalOpen} />
-      <main className="pb-14">
-        <Hero setModalOpen={setModalOpen} />
-        <CardsHolder />
-      </main>
-      <Footer />
+      <div className="flex w-full">
+        <Navbar isOpen={isOpen} setOpen={setOpen} />
+        <Sidebar />
+      </div>
       <AnimatePresence>
-        {isModalOpen && <Modal setModalOpen={setModalOpen} />}
+        {isOpen && <MobileSidebar isOpen={isOpen} setOpen={setOpen} />}
       </AnimatePresence>
     </div>
   );
