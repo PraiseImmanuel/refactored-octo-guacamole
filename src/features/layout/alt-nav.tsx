@@ -16,9 +16,7 @@ const AltNavbar: React.FC<IProps> = ({ isOpen, setOpen }) => {
     <nav
       className={`border-b border-b-black/10 md:border-0 z-30
         fixed w-full transition-all duration-300 md:pt-8 ${
-          !isOpen
-            ? "bg-[#f1f1f1] md:bg-transparent md:"
-            : "bg-white bg-opacity-95 md:bg-transparent backdrop-blur"
+          !isOpen ? "bg-[#f1f1f1]" : "bg-white bg-opacity-95"
         }`}
     >
       <Wrapper>
@@ -27,7 +25,7 @@ const AltNavbar: React.FC<IProps> = ({ isOpen, setOpen }) => {
             <Hamburger size={24} toggled={isOpen} toggle={setOpen} />
           </div>
           <div
-            className="flex justify-between w-28 items-center"
+            className="flex justify-between w-28 items-center cursor-pointer"
             onClick={() => setisDropedDown(!isDropedDown)}
           >
             <p className="text-xl font-[600]">JudiCMS</p>

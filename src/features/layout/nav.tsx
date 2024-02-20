@@ -13,7 +13,12 @@ const links = [
   "Recommend Jugdments",
 ];
 
-const linksRoute = ["court-reading", "documentation", "", ""];
+const linksRoute = [
+  "court-reading",
+  "documentation",
+  "legal-research",
+  "recommend-judgments",
+];
 
 interface IProps {
   isOpen: boolean;
@@ -39,7 +44,7 @@ const Navbar: React.FC<IProps> = ({ setOpen, isOpen }) => {
             <Hamburger size={24} toggled={isOpen} toggle={setOpen} />
           </div>
           <div
-            className="flex justify-between w-28 items-center"
+            className="flex justify-between w-28 items-center cursor-pointer"
             onClick={() => setisDropedDown(!isDropedDown)}
           >
             <p className="text-xl font-[600]">JudiCMS</p>
@@ -85,7 +90,7 @@ export const DropDowns = () => {
   return (
     <div
       className="border border-black/10 w-[80%] min-w-[280px] absolute top-[70px] md:top-[48px]
-    mx-auto rounded-md left-1/2 md:-left-0 translate-x-1/2 md:translate-x-0 bg-white"
+    mx-auto rounded-md left-1/2 md:-left-0 translate-x-1/2 md:translate-x-0 bg-white md:w-96"
     >
       <div className="flex flex-col items-center">
         {links.map((link, index) => (
