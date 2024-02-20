@@ -1,38 +1,26 @@
 "use client";
 import Wrapper from "@/features/shared/wrapper";
-import { AnimatePresence, motion } from "framer-motion";
 import { Sling as Hamburger } from "hamburger-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-
-const links = [
-  "Court Reading",
-  "Documentation",
-  "Legal Research",
-  "Recommend Jugdments",
-];
-
-const linksRoute = ["court-reading", "documentation", "", ""];
+import { DropDowns } from "./nav";
 
 interface IProps {
   isOpen: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Navbar: React.FC<IProps> = ({ setOpen, isOpen }) => {
+const AltNavbar: React.FC<IProps> = ({ isOpen, setOpen }) => {
   const [isDropedDown, setisDropedDown] = useState(false);
 
   return (
     <nav
-      className={`border-b border-b-black/10 md:border-0 z-30 md:left-[320px]
-      fixed w-full md:w-96 transition-all duration-300 md:pt-8 ${
-        !isOpen
-          ? "bg-[#f1f1f1] md:bg-transparent md:"
-          : "bg-white bg-opacity-95 md:bg-transparent backdrop-blur"
-      }`}
+      className={`border-b border-b-black/10 md:border-0 z-30
+        fixed w-full transition-all duration-300 md:pt-8 ${
+          !isOpen
+            ? "bg-[#f1f1f1] md:bg-transparent md:"
+            : "bg-white bg-opacity-95 md:bg-transparent backdrop-blur"
+        }`}
     >
-      <div className=""></div>
       <Wrapper>
         <div className="py-2.5 flex justify-between items-center relative">
           <div className=" md:hidden">
@@ -79,26 +67,4 @@ const Navbar: React.FC<IProps> = ({ setOpen, isOpen }) => {
   );
 };
 
-export default Navbar;
-
-export const DropDowns = () => {
-  return (
-    <div
-      className="border border-black/10 w-[80%] min-w-[280px] absolute top-[70px] md:top-[48px]
-    mx-auto rounded-md left-1/2 md:-left-0 translate-x-1/2 md:translate-x-0 bg-white"
-    >
-      <div className="flex flex-col items-center">
-        {links.map((link, index) => (
-          <Link
-            href={linksRoute[index]}
-            key={index}
-            className="transition-all duration-300 text-sm font-[500] border-b border-transparent
-            border-b-[#555]/30 w-full flex text-center justify-center py-4"
-          >
-            {link}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-};
+export default AltNavbar;

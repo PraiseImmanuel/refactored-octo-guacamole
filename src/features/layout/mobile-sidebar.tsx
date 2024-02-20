@@ -70,7 +70,8 @@ const MobileSidebar: React.FC<IProps> = ({ setOpen, isOpen }) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="w-full max-w-[300px] bg-white/60 h-screen fixed top-[70px] md:hidden"
+      className="w-full max-w-[300px] bg-white/60
+ h-screen fixed top-[70px] md:hidden"
     >
       <button className="flex items-center gap-2.5 w-full py-4 border-b border-b-[#444]/20 pl-[calc(5%+10px)]">
         <svg

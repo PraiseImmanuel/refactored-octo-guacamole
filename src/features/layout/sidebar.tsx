@@ -43,7 +43,10 @@ const histories = [
 
 const Sidebar = () => {
   return (
-    <div className="w-full max-w-[300px] bg-white/60 h-screen fixed top-0 hidden md:block pt-6">
+    <div
+      className="w-full max-w-[300px] bg-white/60
+ h-screen fixed top-0 hidden md:block pt-6 z-30"
+    >
       <button className="flex items-center gap-2.5 w-full py-5 border-b border-b-[#444]/20 pl-[calc(5%+10px)]">
         <svg
           width="22"
