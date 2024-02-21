@@ -34,10 +34,10 @@ const Documentation = () => {
           <div className="p-3 mt-4">
             <h2>Folders</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 tb:grid-cols-3 md:grid-cols-4 gap-6 mt-4">
-              <FolderCard a="" />
-              <FolderCard a="" />
-              <FolderCard a="" />
-              <FolderCard a="" />
+              <FolderCard a="1" />
+              <FolderCard a="2" />
+              <FolderCard a="3" />
+              <FolderCard a="4" />
             </div>
           </div>
           <div className="p-3 mt-4">
