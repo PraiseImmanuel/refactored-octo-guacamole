@@ -12,10 +12,10 @@ const CourtReading = () => {
   const [addDropDown, setAddDropDown] = useState(false);
   return (
     <>
-      <div className="flex w-full font-poppins ">
+      <div className="flex w-full font-merri ">
         <AltNavbar isOpen={isOpen} setOpen={setOpen} />
       </div>
-      <div className="font-poppins pt-16 pb-[150px]">
+      <div className="font-merri pt-16 pb-[150px]">
         <Wrapper>
           <div className="p-3 bg-[#fff]/70 rounded-lg mt-8 flex justify-between items-center">
             <h1 className="font-[600]">Court Reading</h1>

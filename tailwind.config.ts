@@ -18,6 +18,7 @@ const config: Config = {
       },
       fontFamily: {
         poppins: ['"Poppins", sans-serif'],
+        merri: ['"Merriweather", serif'],
       },
     },
   },

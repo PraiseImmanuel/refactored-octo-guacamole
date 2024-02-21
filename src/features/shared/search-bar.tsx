@@ -14,7 +14,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ setIsSearching }) => {
   };
   return (
     <div className="fixed bottom-0 right-1/2 translate-x-1/2 w-full">
-      <div className="bg-[#f1f1f1] py-2 px-6 rounded-xl pb-4 pl-[340px]">
+      <div className="bg-[#f1f1f1] py-2 px-6 rounded-xl pb-4 md:pl-[340px]">
         <div className="max-w-[600px] mx-auto">
           <div className="flex items-center gap-3">
             <input
