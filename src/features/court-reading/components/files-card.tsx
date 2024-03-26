@@ -10,23 +10,22 @@ interface FilesCardProps {
 
 const FilesCard: React.FC<FilesCardProps> = ({}) => {
   const [dropdown, setDropdown] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  useOnClickOutside(ref, () => setDropdown(false));
+  const addNewRef = useRef<HTMLDivElement>(null);
+  useOnClickOutside(addNewRef, () => setDropdown(false));
   return (
     <div className="rounded-md flex-1 bg-[#fff]/80 p-3.5 min-w-[210px] relative">
       <div className="flex items-center justify-between">
         <p className="text-sm font-[500]">Case 0001</p>
-        <button onClick={() => setDropdown((prevDropdown) => !prevDropdown)}>
-          <OptionIcon />
-        </button>
+
+        <div className="" ref={addNewRef}>
+          <button onClick={() => setDropdown((prevDropdown) => !prevDropdown)}>
+            <OptionIcon />
+          </button>
+          {dropdown && <AddNew />}
+        </div>
       </div>
 
       <div className="w-full h-36 bg-slate-200 rounded-md mt-4"></div>
-      {dropdown && (
-        <div ref={ref}>
-          <AddNew />
-        </div>
-      )}
     </div>
   );
 };

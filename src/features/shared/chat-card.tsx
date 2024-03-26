@@ -3,7 +3,7 @@ import { Listen } from "../../../public/svgs";
 
 const ChatCard = () => {
   return (
-    <div className="bg-white h-fit rounded-xl p-6 max-w-[750px]">
+    <div className="bg-white h-fit rounded-xl p-6 max-w-[750px] mx-3 md:mx-6">
       <div className="flex items-center gap-3 border-b pb-2 border-b-[#333]/20">
         <div className="w-8 h-8 min-h-8 min-w-8 bg-[#777] rounded-[50%]"></div>
         <div className="">

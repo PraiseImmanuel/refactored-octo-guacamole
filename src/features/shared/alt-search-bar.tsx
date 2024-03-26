@@ -3,9 +3,13 @@ import React, { useState } from "react";
 
 interface SearchBarProps {
   setIsSearching?: React.Dispatch<React.SetStateAction<boolean>>;
+  placeholder: string;
 }
 
-const AltSearchBar: React.FC<SearchBarProps> = ({ setIsSearching }) => {
+const AltSearchBar: React.FC<SearchBarProps> = ({
+  setIsSearching,
+  placeholder,
+}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const handleSearch = () => {
     // setIsSearching(true);
@@ -20,14 +24,14 @@ const AltSearchBar: React.FC<SearchBarProps> = ({ setIsSearching }) => {
             <input
               type="text"
               className="w-full border-2 py-3.5 px-4 mt-2 rounded-md md:mr-2 outline-none 
-            focus:border-[#222]/50 focus:border-2 transition-all duration-200"
-              placeholder="Enter prompt or research information"
+            focus:border-[#222]/50 focus:border-2 transition-all duration-200 text-[#333]"
+              placeholder={placeholder}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button
               className="bg-[#111] bg-opacity-85 text-white px-6 py-2.5 md:py-3.5 items-center
-            rounded-lg min-h-[52px] mt-2.5 mx-auto flex hover:opacity-70 transition-all duration-200"
+            rounded-lg min-h-[52px] mt-2.5 mx-auto flex hover:opacity-80 transition-all duration-200"
               onClick={handleSearch}
             >
               <span className="tb:hidden">

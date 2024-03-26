@@ -89,8 +89,8 @@ export default Navbar;
 export const DropDowns = () => {
   return (
     <div
-      className="border border-black/10 w-[80%] min-w-[280px] absolute top-[70px] md:top-[48px]
-    mx-auto rounded-md left-1/2 md:-left-0 -translate-x-1/2 md:translate-x-0 bg-white md:w-96"
+      className="border border-black/10 w-[80%] min-w-[220px] absolute top-[70px] md:top-[48px]
+    mx-auto rounded-md left-1/2 md:-left-0 -translate-x-1/2 md:translate-x-0 bg-white md:w-80 "
     >
       <div className="flex flex-col items-center">
         {links.map((link, index) => (

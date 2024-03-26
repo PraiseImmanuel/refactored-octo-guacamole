@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { trimString } from "../../../lib/utils/trim-string";
+import { DeleteIcon } from "../../../public/svgs";
 
 const histories = [
   {
@@ -45,9 +46,12 @@ const Sidebar = () => {
   return (
     <div
       className="w-full max-w-[300px] bg-white
- h-screen fixed top-0 hidden md:block pt-6 z-30"
+      h-screen fixed top-0 hidden md:block pt-6 z-30"
     >
-      <button className="flex items-center gap-2.5 w-full py-5 border-b border-b-[#444]/20 pl-[calc(5%+10px)]">
+      <button
+        className="flex items-center gap-2.5 w-full py-5 border-b
+      border-b-[#444]/20 pl-[calc(5%+10px)]"
+      >
         <svg
           width="22"
           height="22"
@@ -65,17 +69,32 @@ const Sidebar = () => {
         <span className="font-[500] text-[#333]">Start New Search</span>
       </button>
 
-      <div className="pl-[calc(5%+10px)]">
-        <p className="font-[600] text-lg py-4 text-[#555]">Histories</p>
-        <div className="flex flex-col gap-4 mt-4">
+      <div className="">
+        <p className="font-[600] text-lg py-4 text-[#555] pl-[calc(5%+10px)]">
+          Histories
+        </p>
+        <div className="flex flex-col gap-2 mt-4">
           {histories.map((item, index) => (
-            <Link
-              className="flex capitalize text-sm font-[500]"
-              href={item.link}
-              key={index}
-            >
-              {trimString(item.title, 28)}
-            </Link>
+            <div className="relative" key={index}>
+              <div
+                className="hover:border-x-[transparent] border border-transparent py-2
+              transition-all hover:border-[#6e6e6e] pl-[calc(5%+10px)] group"
+              >
+                <Link
+                  className="flex capitalize text-sm font-[500]"
+                  href={item.link}
+                >
+                  {trimString(item.title, 28)}
+                </Link>
+
+                <button
+                  type="button"
+                  className="absolute right-5 top-1/2 -translate-y-1/2 hidden group-hover:block transition-all"
+                >
+                  <DeleteIcon />
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       </div>

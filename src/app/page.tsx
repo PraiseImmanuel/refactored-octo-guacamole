@@ -1,9 +1,12 @@
 import LandingPage from "@/features/landing";
+import ProtectedRoutes from "@/features/layout/protected-routes-container";
 
 export default function Home() {
   return (
     <>
-      <LandingPage />
+      <ProtectedRoutes>
+        <LandingPage />
+      </ProtectedRoutes>
     </>
   );
 }

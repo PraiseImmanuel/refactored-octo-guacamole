@@ -41,9 +41,9 @@ const RecommendJudgments = () => {
           )}
           {isSearching && (
             <>
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
+              <ChatCard key={1} />
+              <ChatCard key={2} />
+              <ChatCard key={3} />
             </>
           )}
         </div>

@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const LegalResearch = () => {
   const [isOpen, setOpen] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
+  const [isSearching, setIsSearching] = useState(true);
 
   return (
     <div className="font-merri min-h-screen">
@@ -21,7 +21,7 @@ const LegalResearch = () => {
         <Sidebar />
       </div>
       {/* Inner Page */}
-      <div className="md:pl-[300px] pt-28 relative min-h-screen flex">
+      <div className="md:pl-[300px] pt-28 relative min-h-screen flex gap-4">
         <div className="w-full flex flex-col gap-5 items-center pb-[150px] flex-1 justify-center">
           {!isSearching && (
             <div className="flex justify-center flex-col">
@@ -41,9 +41,9 @@ const LegalResearch = () => {
           )}
           {isSearching && (
             <>
-              <ChatCard />
-              <ChatCard />
-              <ChatCard />
+              <ChatCard key={1} />
+              <ChatCard key={2} />
+              <ChatCard key={3} />
             </>
           )}
         </div>

@@ -1,10 +1,12 @@
+"use client";
 import React, { useState } from "react";
 
 interface IProps {
   setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AuthCard: React.FC<IProps> = ({ setModalOpen }) => {
+// const AuthCard: React.FC<IProps> = ({ setModalOpen }) => {
+const AuthCard = () => {
   const [formField, setFormField] = useState({
     email: "",
     password: "",
@@ -21,7 +23,7 @@ const AuthCard: React.FC<IProps> = ({ setModalOpen }) => {
       <div className="flex flex-col">
         <button
           className="self-end mb-6"
-          onClick={() => setModalOpen(false)}
+          // onClick={() => setModalOpen(false)}
           type="button"
         >
           <svg
