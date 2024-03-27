@@ -1,9 +1,6 @@
 "use client";
 import React, { useState } from "react";
-// import Navbar from "./navbar";
 import Footer from "./components/footer";
-import Modal from "./components/modal";
-import { AnimatePresence } from "framer-motion";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -18,9 +15,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </div>
       <Footer />
-      <AnimatePresence>
-        {isModalOpen && <Modal setModalOpen={setModalOpen} />}
-      </AnimatePresence>
     </div>
   );
 };
