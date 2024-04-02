@@ -2,6 +2,8 @@
 import { signup } from "@/lib/apis/request";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import Link from "next/link";
+import { toast } from "react-toastify";
 
 const SignupCard = () => {
   const router = useRouter();
@@ -9,10 +11,14 @@ const SignupCard = () => {
     email: "",
     password: "",
   });
+  const [isloading, setIsloading] = useState(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
+    toast.success("Loading", { toastId: "loading" });
+    setIsloading(true);
     signup(formField).then((res) => {
+      setIsloading(false);
       if (res?.success) {
         router.push("/auth/login");
       }
@@ -89,13 +95,25 @@ const SignupCard = () => {
               <div className="mt-2">
                 <button
                   type="submit"
+                  disabled={isloading}
                   className="flex w-full justify-center bg-[#262626] px-3 py-1.5 text-sm max-w-[300px] mx-auto
-              font-semibold leading-6 text-white shadow-sm hover:bg-[#444] outline-none rounded-full"
+                  font-semibold leading-6 text-white shadow-sm hover:bg-[#444] outline-none rounded-full"
                 >
                   Register
                 </button>
               </div>
             </form>
+          </div>
+          <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
+            <p className="text-center text-gray-600">
+              Already have an account?
+              <Link
+                href={"/auth/login"}
+                className="text-md underline text-[#333] underline-offset-2 pl-1"
+              >
+                Log In
+              </Link>
+            </p>
           </div>
         </div>
       </div>

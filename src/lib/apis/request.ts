@@ -41,8 +41,8 @@ const catchErrors = (error: unknown) => {
   if (axios.isAxiosError(error)) {
     if (error.response) {
       // Handle error with response from the server
-      const message = error.response.data.message;
-      toast.error("Wrong Credentials. Please try again.", {
+      const message = error.response.data.detail;
+      toast.error(message ? message : error.response.data[0], {
         toastId: "Error",
       });
       return { success: false, message }; // Return both failure status and message
